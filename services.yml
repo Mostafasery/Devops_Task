@@ -1,0 +1,22 @@
+- name: restart services
+  hosts: all
+  become: true
+  tasks:
+#Ansible playbook to restart ssh
+    - name: sshd restart
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
+        enabled: true
+#Ansible playbook to restart nginix
+    - name: sshd restart
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+        enabled: true
+#Ansible playbook to restart ntpd
+    - name: sshd restart
+      ansible.builtin.service:
+        name: ntpd
+        state: restarted
+        enabled: true
