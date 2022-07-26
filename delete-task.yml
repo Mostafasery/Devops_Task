@@ -1,0 +1,8 @@
+- name: remove line from a file
+  hosts: all
+  tasks:
+   - name: remove line from file
+     lineinfile:
+       path: target_file.txt
+       line: "Apple.*"
+       state: absent
